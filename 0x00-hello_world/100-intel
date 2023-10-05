@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ -z "$CFILE" ]; then
+echo "CFILE variable is not set."
+exit 1
+fi
+# Extract the filename without the extension
+FILENAME=$(basename -- "$CFILE")
+FILENAME_NOEXT="${FILENAME%.*}"
+# Generate assembly code
+gcc -S -masm=intel "$CFILE" -o "${FILENAME_NOEXT}.s"
+echo "Assembly code generated and saved as ${FILENAME_NOEXT}.s"
