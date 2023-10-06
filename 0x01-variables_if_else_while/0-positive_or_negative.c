@@ -4,26 +4,28 @@
 /**
  * main - Entry point
  *
- * This program generates a random number and determines if it's positive,
- * negative, or zero.
+ * This is the main function that generates a random number,
+ * checks if it's positive, zero, or negative, and prints the result.
  *
- * Return: Always 0 (Success)
+ * Return: 0 (Success)
  */
 int main(void)
 {
 int n;
-/* Seed the random number generator */
 srand(time(0));
-/* Generate a random number between -100 and 100 (inclusive) */
-n = rand() % 201 - 100;
-/* Print the generated number */
-printf("The number %d ", n);
-/* Check if the number is positive, zero, or negative */
+n = rand() - RAND_MAX / 2;
+printf("The number %d is ", n);
 if (n > 0)
-printf("is positive\n");
+{
+printf("positive\n");
+}
 else if (n == 0)
-printf("is zero\n");
+{
+printf("zero\n");
+}
 else
-printf("is negative\n");
+{
+printf("negative\n");
+}
 return (0);
 }
