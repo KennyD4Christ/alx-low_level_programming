@@ -17,7 +17,7 @@ result = row * column;
 if (column > 0)
 printf(", ");
 if (result < 10)
-printf("  ");
+printf(" ");
 else if (result < 100)
 printf(" ");
 printf("%d", result);
