@@ -19,6 +19,7 @@ for (j = 0; j <= n; j++)
 int result = i * j;
 if (j > 0)
 {
+_putchar(',')
 _putchar(' ');
 if (result < 10)
 _putchar(' ');
