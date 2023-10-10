@@ -8,7 +8,7 @@
 int print_last_digit(int n)
 {
 int last_digit;
-/* Ensure n is positive or zero to extract the last digit correctly */
+/* Handle the case where n may be negative by converting it to positive */
 if (n < 0)
 {
 n = -n;
