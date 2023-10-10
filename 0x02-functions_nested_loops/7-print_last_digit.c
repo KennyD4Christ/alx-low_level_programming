@@ -7,7 +7,7 @@
 int main(void)
 {
 int num = 98;
-int last_digit = print_last_digit(num);
+print_last_digit(num);
 _putchar('\n');
 return (0);
 }
