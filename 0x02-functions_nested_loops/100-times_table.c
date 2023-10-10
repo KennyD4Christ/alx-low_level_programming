@@ -14,15 +14,12 @@ for (row = 0; row <= n; row++)
 for (column = 0; column <= n; column++)
 {
 result = row * column;
-if (column == 0)
-printf("0");
-else
+if (column > 0)
 printf(", ");
 if (result < 10)
-printf("  %d", result);
+printf("  ");
 else if (result < 100)
-printf(" %d", result);
-else
+printf(" ");
 printf("%d", result);
 }
 printf("\n");
