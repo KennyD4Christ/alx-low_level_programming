@@ -11,12 +11,6 @@ print_last_digit(num);
 _putchar('\n');
 return (0);
 }
-/**
- * print_last_digit - Prints the last digit of a number.
- * @n: The integer from which to extract the last digit.
- *
- * Return: The value of the last digit.
- */
 int print_last_digit(int n)
 {
 int last_digit;
