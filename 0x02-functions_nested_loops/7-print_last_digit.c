@@ -1,20 +1,36 @@
 #include "main.h"
 /**
- * main - Entry point of the program.
+ * main - Entry point.
  *
- * Return: Always 0 (success).
+ * Return: Always 0.
  */
 int main(void)
 {
-int number = 98;
-int last_digit;
-if (number < 0)
-{
-number = -number;
-}
-last_digit = number % 10;
-_putchar('0' + last_digit);
+int r;
+print_last_digit(98);
+print_last_digit(0);
+r = print_last_digit(-1024);
+_putchar('0' + r);
 _putchar('\n');
-
+return (0);
+}
+/**
+ * print_last_digit - Prints and returns the last digit of a number.
+ * @n: The input number.
+ *
+ * Return: The last digit of the input number.
+ */
+int print_last_digit(int n)
+{
+int last_digit;
+if (n < 0)
+{
+last_digit = -n % 10;
+}
+else
+{
+last_digit = n % 10;
+}
+_putchar(last_digit + '0');  /* Print the last digit as a character */
 return (last_digit);
 }
