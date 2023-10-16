@@ -1,5 +1,4 @@
 #include "main.h"
-#include <limits.h>
 
 /**
  * _atoi - Converts a string to an integer.
@@ -9,35 +8,34 @@
  */
 int _atoi(char *s)
 {
-	int result = 0;
-	int sign = 1; /* Initialize sign as positive */
-	int i = 0;
+	int i, d, n, len, f, digit;
 
-	/* Check for and handle leading '+' or '-' */
-	while (s[i] == '-' || s[i] == '+')
+	i = 0;
+	d = 0;
+	n = 0;
+	len = 0;
+	f = 0;
+	digit = 0;
+	while (s[len] != '\0')
+		len++;
+	while (i < len && f == 0)
 	{
 		if (s[i] == '-')
+			++d;
+		if (s[i] >= '0' && s[i] <= '9')
 		{
-			sign *= -1; /* Change sign to negative */
+			digit = s[i] - '0';
+			if (d % 2)
+				digit = -digit;
+			n = n * 10 + digit;
+			f = 1;
+			if (s[i + 1] < '0' || s[i + 1] > '9')
+				break;
+			f = 0;
 		}
 		i++;
 	}
-
-	/* Convert the numeric part of the string to an integer */
-	while (s[i] >= '0' && s[i] <= '9')
-	{
-		/* Check for integer overflow */
-		int digit = s[i] - '0';
-
-		if (result > (INT_MAX - digit) / 10)
-		{
-			/* Handle integer overflow by returning the appropriate value */
-			return ((sign == 1) ? INT_MAX : INT_MIN);
-		}
-
-		result = result * 10 + digit;
-		i++;
-	}
-
-	return (result * sign);
+	if (f == 0)
+		return (0);
+	return (n);
 }
