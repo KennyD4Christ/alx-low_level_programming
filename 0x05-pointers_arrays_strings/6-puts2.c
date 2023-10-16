@@ -12,9 +12,7 @@ int i = 0;
 while (str[i] != '\0')
 {
 _putchar(str[i]);
-i++;
-if (str[i] == '\0')
-i++;
+i +=2;
 }
 _putchar('\n');  /* Print a new line after the characters */
 }
