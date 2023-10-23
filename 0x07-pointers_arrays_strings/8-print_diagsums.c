@@ -8,12 +8,16 @@ void print_diagsums(int *a, int size)
 {
 int sum1 = 0;
 int sum2 = 0;
-int i;
-for (i = 0; i < size; i++)
+int index;
+for (index = 0; index < size; index++)
 {
-sum1 += a[i * size + i];/* Sum of the main diagonal */
-sum2 += a[i * size + (size - i - 1)];  /* Sum of the other diagonal */
+sum1 += a[index];
+a += size;
 }
-printf("Sum of the main diagonal: %d\n", sum1);
-printf("Sum of the other diagonal: %d\n", sum2);
+for (index = 0; index < size; index++)
+{
+sum2 += a[index];
+a -= size;
+}
+printf("%d, %d\n", sum1, sum2);
 }
