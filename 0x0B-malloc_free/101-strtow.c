@@ -44,6 +44,8 @@ while (*str == ' ' && *str)
 str++;
 for (j = 0; str[j] != ' ' && str[j]; j++)
 continue;
+if (j > 0)
+{
 words[i] = (char *)malloc((j + 1) * sizeof(char));
 if (words[i] == NULL)
 {
@@ -55,6 +57,7 @@ return (NULL);
 for (j = 0; str[j] != ' ' && str[j]; j++)
 words[i][j] = str[j];
 words[i][j] = '\0';
+}
 str += j;
 }
 words[word_count] = NULL;
