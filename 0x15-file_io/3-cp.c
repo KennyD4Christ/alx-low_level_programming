@@ -77,3 +77,19 @@ break;
 }
 exit(code);
 }
+/**
+ *  * main - Entry point for the cp program.
+ *   * @argc: The number of command-line arguments.
+ *    * @argv: An array of strings containing the command-line arguments.
+ *     *
+ *      * Return: 0 on success, other values on failure.
+ */
+int main(int argc, char *argv[])
+{
+if (argc != 3)
+{
+print_error(97, "");
+}
+copy_file(argv[1], argv[2]);
+return (0);
+}
