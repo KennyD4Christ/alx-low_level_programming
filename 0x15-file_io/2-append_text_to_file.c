@@ -2,8 +2,6 @@
 #include <unistd.h>
 #include "main.h"
 
-size_t _strlen(char *str);
-
 /**
  *  * append_text_to_file - Appends text at the end of a file.
  *   * @filename: The name of the file.
