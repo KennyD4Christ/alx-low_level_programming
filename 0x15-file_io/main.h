@@ -16,7 +16,7 @@ int create_file(const char *filename, char *text_content);
 int append_text_to_file(const char *filename, char *text_content);
 size_t _strlen(char *str);
 void close_fd(int fd);
-void print_error(int code, const char *file_name);
+void print_error(const char *message);
 void copy_file(const char *file_from, const char *file_to);
 
 #endif
