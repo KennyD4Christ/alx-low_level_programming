@@ -46,17 +46,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 shash_node_t *new_node, *current;
 if (!ht || !key || !value)
 return (0);
-current = ht->shead;
-while (current)
-{
-if (strcmp(key, current->key) == 0)
-{
-free(current->value);
-current->value = strdup(value);
-return (1);
-}
-current = current->snext;
-}
 new_node = malloc(sizeof(shash_node_t));
 if (!new_node)
 return (0);
