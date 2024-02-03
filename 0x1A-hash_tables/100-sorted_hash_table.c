@@ -60,7 +60,7 @@ return (0);
 }
 current = ht->shead;
 new_node->snext = new_node->sprev = NULL;
-while (current && strcmp(key, current->key) < 0)
+while (current && strcmp(key, current->key) > 0)
 current = current->snext;
 if (current)
 {
